@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Stuffs } from '../../api/stuff/Stuff.js';
+import { Contacts } from '../../api/contacts/Contacts';
 
 /* eslint-disable no-console */
 
@@ -9,10 +10,24 @@ function addData(data) {
   Stuffs.collection.insert(data);
 }
 
+/** Initialize the database with a default data document. */
+function addContact (data) {
+  console.log(`  Adding: ${data.lastname} (${data.owner})`);
+  Contacts.collection.insert(data);
+}
+
 /** Initialize the collection if empty. */
 if (Stuffs.collection.find().count() === 0) {
   if (Meteor.settings.defaultData) {
     console.log('Creating default data.');
     Meteor.settings.defaultData.map(data => addData(data));
+  }
+}
+
+/** Initialize the collection if empty. */
+if (Contacts.collection.find().count() === 0) {
+  if (Meteor.settings.defaultContacts) {
+    console.log('Creating default Contacts.');
+    Meteor.settings.defaultContacts.map(data => addContacts(data));
   }
 }

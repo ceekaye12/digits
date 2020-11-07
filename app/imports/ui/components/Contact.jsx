@@ -8,6 +8,9 @@ class Contact extends React.Component {
   render() {
     return (
         <Card centered>
+          <Card.Content extra>
+            <Link to={`/edit/${this.props.contact._id}`}>Edit</Link>
+          </Card.Content>
           <Card.Content>
             <Image
                 floated='right'

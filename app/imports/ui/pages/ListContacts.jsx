@@ -4,8 +4,8 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import Contact from '../components/Contact';
-import { Contacts } from '../components/Contacts';
-
+import { Contacts } from '../../api/contact/Contacts';
+import { Notes } from '../../api/note/Notes';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListContacts extends React.Component {
@@ -29,7 +29,8 @@ class ListContacts extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ListContacts.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  contacts: PropTypes.array.isRequired,
+  notes: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -37,8 +38,10 @@ ListContacts.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe(Contacts.userPublicationName);
+  const subscription2 = Meteor.subscribe(Notes.userPublicationName);
   return {
     contacts: Contacts.collection.find({}).fetch(),
-    ready: subscription.ready(),
+    notes: Notes.collection.find({}).fetch(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(ListContacts);

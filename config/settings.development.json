@@ -10,6 +10,7 @@
     { "name": "Banana", "quantity": 2, "owner": "admin@foo.com", "condition": "good" },
     { "name": "Boogie Board", "quantity": 2, "owner": "admin@foo.com", "condition": "excellent" }
   ],
+
   "defaultContacts": [{
     "firstName": "Philip", "lastName": "Johnson", "address": "POST 307, University of Hawaii",
     "image": "https://philipmjohnson.github.io/image/philip2.jpeg", "owner": "john@foo.com",
@@ -21,9 +22,9 @@
       "description": "I am originally from France. I maintain a list of reports from my surf sessions. I have proof  that I ran the Hana relay with an actual Team."
     },
     {
-      "firstName": "Kim", "lastName": "Binsted", "address": "POST 307, University of Hawaii", "owner": "john@foo.com",
-      "image": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/kim_binsted-square-300x300.jpg",
-      "description": "Kim Binsted received her BSc in Physics at McGill (1991), and her PhD in Artificial Intelligence from the University of Edinburgh (1996). Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as What do you call a Martian who drinks beer? An ale-ien!".
+      "firstName": "Kim", "lastName": "Binsted", "address": "POST 307, University of Hawaii",
+      "image": "https://www.ics.hawaii.edu/wp-content/uploads/2013/08/kim_binsted-square-300x300.jpg", "owner": "admin@foo.com",
+      "description": "Kim Binsted received her BSc in Physics at McGill (1991), and her PhD in Artificial Intelligence from the University of Edinburgh (1996). Her thesis topic was the computational modeling and generation of punning riddles, and her program, JAPE (Joke Analysis and Production Engine), generated puns such as 'What do you call a Martian who drinks beer? An ale-ien!'"
     }
   ]
 }

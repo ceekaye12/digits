@@ -7,18 +7,15 @@ import { withRouter } from 'react-router-dom';
 class Contact extends React.Component {
   render() {
     return (
-        <Card centered>
-          <Card.Content extra>
-            <Link to={`/edit/${this.props.contact._id}`}>Edit</Link>
-          </Card.Content>
+        <Card>
           <Card.Content>
             <Image
                 floated='right'
                 size='mini'
                 src={this.props.contact.image}
             />
-            <Card.Header>{this.props.contact.firstName} {this.props.contact.lastName}</Card.Header>
-            <Card.Meta>this.props.contact.address</Card.Meta>
+            <Card.Header>{this.prop.contact.firstName} {this.props.contact.lastName}</Card.Header>
+            <Card.Meta>{this.props.contact.address}</Card.Meta>
             <Card.Description>
               {this.props.contact.description}
             </Card.Description>
